@@ -1,10 +1,4 @@
 
-  // Project Name: Wearable Sensor ALS Assess
-  // Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
-  // Date Due: May 31st
-  // File Name: navbar.js
-  // Task Description: individual js file that controls navbar functionality 
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use

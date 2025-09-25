@@ -1,10 +1,4 @@
 
-  // Project Name: Wearable Sensor ALS Assess
-  // Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
-  // Date Due: May 31st
-  // File Name: register.js
-  // Task Description: individual js file that is in charge of registration of a new user
-
 // ----------------- Firebase Setup & Initialization ------------------------//
 
 // Import the functions you need from the SDKs you need

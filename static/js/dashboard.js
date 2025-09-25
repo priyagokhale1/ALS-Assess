@@ -1,10 +1,4 @@
 
-  // Project Name: Wearable Sensor ALS Assess
-  // Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
-  // Date Due: May 31st
-  // File Name: dashboard.js
-  // Task Description: individual js file that controls the dashboard, like the start and stop recording and the chart JS
-
 // ----------------- Firebase Setup & Initialization ------------------------//
 
 // Import the functions you need from the SDKs you need
