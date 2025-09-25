@@ -1,0 +1,368 @@
+/* 
+  Project Name: Wearable Sensor ALS Assess
+  Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
+  Date Due: May 31st
+  File Name: aboutUs.css
+  Task Description: individual css file for about us page, controlling all sylistic elements regarding the authors and information about ALS
+*/
+
+/* makes the body one uniform color, similar to the other pages */
+body {
+  background: linear-gradient(to left, #120351, #023645);
+}
+
+/* the information in the container is displayed in a grid format */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    box-sizing: border-box;
+    width: 100vw;
+    padding-top: 50px;
+    gap: 20px;
+}
+
+
+/* beginning formatting information in the grid layout */
+.author-title {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  padding-top: 33px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-family: 'Martian Mono';
+}
+
+/* each container corresponds to an author card that takes four quadrants in the grid */
+.container-one {
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+}
+
+.container-two {
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+}
+
+.container-three {
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+}
+
+.container-four {
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+}
+
+/* styling the overlay with the bios of each person */
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  background: rgba(2, 1, 43, 0.58);
+  color: white;
+  opacity: 0;
+  transition: all 0.5s;
+  font-family: 'Martian Mono', serif;
+  border-radius: 20px;
+
+  
+  }
+
+/* styling the actual content of the bios on the cards */
+  .items { 
+    position: relative;
+    padding-left: 20px;
+    justify-items: center !important;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    margin-right: 10px;
+  }
+  .head {
+    font-size: 20px;
+    margin-top: 15px;
+    line-height: 15px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  .head hr {
+    display: block;
+    padding-top: 25px;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px #fef5df;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    transition: all 0.5s;
+  }
+
+  .bio {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  
+  .bio .old {
+    color: white;
+  }
+  .cart {
+    font-size: 12px;
+    opacity: 0;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
+    transform: translateY(40px);
+    transition: all 0.7s;
+  }
+  .cart i {
+    font-size: 16px;
+  }
+  .cart span {
+    margin-left: 10px;
+  }
+  /* beginning the nice hover animations for the bios of the cards */
+  .card-container:hover .overlay {
+    opacity: 1;
+  }
+  .card-container:hover .overlay .head {
+    transform: translateY(0px);
+  }
+  .card-container:hover .overlay hr {
+    width: 95%;
+    transition-delay: 0.4s;
+  }
+  .card-container:hover .overlay .bio {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+  }
+  .card-container:hover .overlay .cart {
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+    opacity: 1;
+  }
+
+  .author-image {
+    height: 300px;
+    width: 225px;
+  }
+  
+  /* some entire page properties that had to be defined */
+  .main-area {
+    display: flex;
+    justify-content: space-between;
+    background-color: #122e4c;
+    color: black;
+    width: 100%;
+    height: 140vh;
+  
+  }
+  
+  /* styling specifically the software engineering text */
+  .soft-eng {
+    font-size: 12px !important;
+    padding-top: 0px !important;
+  }
+
+
+/* each container is the author card. setting the background the image of the person and setting some properties */
+  .container-one {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("/static/img/priya.png");
+    background-color: black;
+    background-size: cover;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    line-height: 10px;
+    justify-content: center;
+    border-radius: 20px;
+  
+    box-sizing: border-box;
+  }
+  
+  .container-two {
+    width: 300px;
+    height: 400px;
+    margin-top: 1000px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("/static/img/emme.png");
+    background-color: black;
+    background-size: cover;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    line-height: 10px;
+    justify-content: center;
+    border-radius: 20px;
+  
+    box-sizing: border-box;
+  }
+  
+  .container-three {
+    width: 300px;
+    height: 400px;
+    margin-top: 1000px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("/static/img/haley.png");
+    background-color: black;
+    background-size: cover;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    line-height: 10px;
+    justify-content: center;
+    border-radius: 20px;
+  
+    box-sizing: border-box;
+  }
+  .container-four {
+    width: 300px;
+    height: 400px;
+    margin-top: 1000px;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("/static/img/bernice.png");
+    background-color: black;
+    background-size: cover;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+    line-height: 10px;
+    justify-content: center;
+    border-radius: 20px;
+  
+    box-sizing: border-box;
+  }
+  
+
+/* formatting the about als information */
+.about-als {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 6fr;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 90vh;
+    background: linear-gradient(to left, #120351, #023645);
+
+}
+
+.about-header {
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-family: 'Martian Mono';
+      
+} 
+
+.about-main {
+  grid-row-start: 2;
+  padding: 0 40px;
+  grid-row-end: span 1;
+  justify-content: center;
+  display: flex;
+  justify-items: center;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Martian Mono';
+}
+
+/* formatting our mission information */
+.our-mission {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 60vh;
+  background: linear-gradient(to left, #120351, #023645);
+
+}
+
+.mission-header {
+  padding-top: 20px;
+  grid-row-start: 1;
+  grid-row-end: span 1;
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 40px;
+font-family: 'Martian Mono';
+    
+} 
+
+.mission-main {
+grid-row-start: 2;
+padding: 0 40px;
+grid-row-end: span 1;
+justify-content: center;
+display: flex;
+justify-items: center;
+color: white;
+font-size: 17px;
+font-family: 'Martian Mono';
+
+}
+
+/* adding a degree of responsiveness to the website */
+
+@media (max-width: 800px) {
+  .about-als {
+    display: block;
+  }
+  .our-mission {
+    display: block;
+  }
+  .container{
+    display: block;
+  }
+  .card-container {
+    margin-bottom: 15px;
+  }
+}

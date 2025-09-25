@@ -1,0 +1,231 @@
+ <!-- Project Name: Wearable Sensor ALS Assess
+  Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
+  Date Due: May 31st
+  File Name: aboutUs.html
+  Task Description: individual html that displays the information for the aboutUs page, including the authors, our mission, and about ALS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALS Assess</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/aboutUs.css')}}">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/ourProduct.css')}}"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@200&display=swap" rel="stylesheet">
+    <script type="module" src="{{url_for('static', filename='js/navbar.js')}}" defer></script>
+    <script type="module" src="{{url_for('static', filename='js/signIn.js')}}" defer></script>
+    <script type="module" src="{{url_for('static', filename='js/register.js')}}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" 
+            defer integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <header id="navbar">
+        <!-- Creates navbar -->
+        <div class="logo">
+            <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='/img/ALSA.png')}}" height=45px width=80px class="grow" id="logo"></a>
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <div class="logo">
+                <img src="{{url_for('static', filename='/img/ALSA.png')}}" height=55px width=55px id="logo">
+            </div>
+            <!--- Pages for navbar -->
+            <ul>
+                <li>
+                    <a href="{{url_for('index')}}">HOME</a>
+                </li>
+                <li>
+                    <a href="{{url_for('aboutUs')}}" >ABOUT US</a>
+                </li>
+                <li>
+                    <a href="{{url_for('ourProduct')}}" >OUR PRODUCT</a>
+                </li>
+                <li>
+                    <a href="" id="dashboard" class=""></a>
+                </li>
+                <li>
+                    <div class="center grow-a-bit">
+                        <button class="remove-for-sign-out show-login login-button-style" id="signInOut"></button>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+        <!--- hamburger button for navbar -->
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <!-- Sign In modal -->
+    <div class="" id="signin-modal-home">
+        <div class="modal-container">
+            
+            <div class="modal-thing ">
+                <div class="signIn-popup">
+                <!--Sign Up -->                    
+                <div class="signIn-close-btn">&times;</div>   
+                <div class="signUpForm flex justify-center"> 
+
+                    <form>
+
+                        <div class="signin-message">Sign-In</div>
+                        <input type="email" placeholder="Email" id="loginEmail" class="signIn-text-field mb-3">
+                        <input type="password" placeholder="Password" id="loginPassword" class="signIn-text-field mb-3">
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input center" type="checkbox" role="switch" id="keepLoggedInSwitch">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Keep me signed in</label>
+                        </div>
+                        <button type = "button" id="signIn" name="signIn" class="btn signIn-btn mb-3 w-100">Sign In</button>
+                        <a id="show-register" class="clicky-button badge bg-secondary py-1 w-100">I don't have an account</a>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register modal -->
+    <div class="" id="register-modal-home">
+        <div class="modal-container">
+            
+            <div class="modal-thing ">
+                <div class="register-popup">
+                <!--Sign Up -->
+                <div class="register-close-btn">&times;</div>   
+                <div class="signUpForm flex justify-center"> 
+                    <form>
+                        <div class="signin-message">Register</div>
+                        <input type="text" placeholder="First Name" id="firstName" class="form-control signIn-text-field mb-3">
+                        <input type="text" placeholder="Last Name" id="lastName" class="form-control signIn-text-field mb-3">
+                        <input type="email" placeholder="Email" id="userEmail" class="form-control signIn-text-field mb-3">
+                        <input type="password" placeholder="Password" id="userPass" class="form-control signIn-text-field mb-3">
+                        <button type = "button" id="submitData" name="submitData" class="register-btn btn mb-3 w-100">Register</button>
+                        <a id="reveal-login" class="clicky-button badge bg-secondary py-1 w-100">Already have an account?</a>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--The author cards with overlays of bios -->
+    <div class="main-area">
+        <div class="container">
+            <div class="header"></div>
+            <div class="author-title">Our Team</div>
+            <div class="card-container container-one">
+                <div class="overlay">
+                    <div class = "items"></div>
+                    <div class = "items head">
+                      <p>Priya Gokhale </p><p class="soft-eng">Software Engineering</p>
+                      <hr>
+                    </div>
+                    <div class = "items bio">
+                      <p class="old">Priya designed the ALS Assess website for users to navigate to their own dashboard for their device, as well as all the pages with information. She also helped to develop the 
+                        circuit using Arduino and wrote Arduino code in C.
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container container-two">
+                <div class="overlay">
+                    <div class = "items"></div>
+                    <div class = "items head">
+                      <p>Emme Cai </p><p class="soft-eng">Software Engineering</p>
+                      <hr>
+                    </div>
+                    <div class = "items bio">
+                      <p class="old">Emme designed the circuit using Arduino and developed Arduino code in C for the ALS Assess. She is a major part of the 
+                        building of the circuitry. She also helped fusion design the electronics box. 
+                      </p>
+                      <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container container-three">
+                <div class="overlay">
+                    <div class = "items"></div>
+                    <div class = "items head">
+                      <p>Haley Deng </p><p class="soft-eng">Biomedical Engineering</p>
+                      <hr>
+                    </div>
+                    <div class = "items bio">
+                      <p class="old">Haley was overseeing the formation of the glove, focusing on comfort and utility. She sewed the final design for the glove 
+                        and sketched everything out throughout the project.
+                      </p>
+                      <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container container-four">
+                <div class="overlay">
+                    <div class = "items"></div>
+                    <div class = "items head">
+                      <p>Bernice Zhao </p><p class="soft-eng">Biomedical Engineering</p>
+                      <hr>
+                    </div>
+                    <div class = "items bio">
+                      <p class="old">Bernice was a major part of the ALS Assess documentation. She completed most of the benchlings and helped in designing the components of the prototype.
+                      </p>
+                      <br>
+                      <br>
+                      <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Information about ALS -->
+    <div class="about-als">
+        <div class="about-header">About ALS</div>
+        <div class="about-main">
+            Amyotrophic lateral sclerosis (ALS) is a progressive neurodegenerative disease that affects as many as 30,000 patients in the United States every year. As the disease progresses, atrophy and muscle weakness spread to various parts of the body. Patients may develop issues with moving, swallowing, speaking, or forming words. Due to rapid progression in the severity of the disease, early diagnosis of ALS is critical to ease symptoms in the patients and provide specialized care. While there is no cure for ALS, early detection of the disease allows individuals to accurately manage symptoms, through methods such as physical, occupational, respiratory, and nutritional therapies. However, due to the symptomatological similarities between ALS and other neurodegenerative diseases, it is often difficult for patients to obtain an accurate diagnosis at an early stage of the disease. Split-hand index—a measurement of the ratio between the loss of motor ability in the pincer grasp and other, spared fingers—is a new and reliable metric for distinguishing ALS from other “mimic” disorders. But current models for detection of split-hand index involve muscle conduction and professional medical equipment unavailable in many medical facilities. A new, wearable, and user-friendly device that detects split-hand index without the utilization of electrical stimulation may aid in early detection of ALS for patient, as well as counteract early muscle compromisation in the hands. 
+        </div>
+        <div class="picture-content">
+            <img class="img-fluid disappear device-image" src="{{url_for('static', filename='/img/handpain.png')}}" alt="ALS device">
+        </div>
+    </div>
+<!-- OUR Mission Specifically -->
+    <div class="our-mission">
+        <div class="mission-header">Our Mission</div>
+        
+        <div class="mission-main">
+            Design, build, and test a new and improved diagnostic method for measuring split-hand index will be designed for early detection of ALS without the constraints of nerve conduction or electrical stimulation. The device will track the ratio of tremors between the abductor pollicis brevis and first dorsal interosseous muscles, and the abductor digiti minimi in order to identify early motor neuron degeneration from ALS while distinguishing ALS from tremor symptoms of other diseases. The device will also record and counteract the wavelengths of tremors in support of the patient’s hand. An accelerometer will be used to measure vibrations and send electrical signals. A vibration motor will be utilized to provide vibrations equal in magnitude and opposite in direction to counteract the tremors. The device will take the form of sleek yet thick fitness gloves with Arduino and strain gauges attached. 
+        </div>
+    </div>
+
+
+
+</body>
+
+<!--Footer (Requires BootStrap Icon CSS)-->
+<footer class="p-4 nb-bg-color footer text-light text-center position-relative">
+  
+    
+    <p class="lead">Copyright &copy; SE 2023 The ALS Assess</p>
+    <p class="small">Website made by Priya Gokhale </p>
+    <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+    </a>
+</footer>
+</html>

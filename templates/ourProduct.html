@@ -1,0 +1,181 @@
+<!-- Project Name: Wearable Sensor ALS Assess
+  Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
+  Date Due: May 31st
+  File Name: ourProduct.html
+  Task Description: individual html page that displays the goals, how to use our device, and faqs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALS Assess</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/ourProduct.css')}}">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/ourProduct.css')}}"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@200&display=swap" rel="stylesheet">
+    <script type="module" src="{{url_for('static', filename='js/navbar.js')}}" defer></script>
+    <script type="module" src="{{url_for('static', filename='js/signIn.js')}}" defer></script>
+    <script type="module" src="{{url_for('static', filename='js/register.js')}}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" 
+            defer integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <header id="navbar">
+        <!-- Creates navbar -->
+        <div class="logo">
+            <a href="{{url_for('index')}}"><img src="{{url_for('static', filename='/img/ALSA.png')}}" height=45px width=80px class="grow" id="logo"></a>
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <div class="logo">
+                <img src="{{url_for('static', filename='/img/ALSA.png')}}" height=55px width=55px id="logo">
+            </div>
+            <!--- Pages for navbar -->
+            <ul>
+                <li>
+                    <a href="{{url_for('index')}}">HOME</a>
+                </li>
+                <li>
+                    <a href="{{url_for('aboutUs')}}" >ABOUT US</a>
+                </li>
+                <li>
+                    <a href="{{url_for('ourProduct')}}" >OUR PRODUCT</a>
+                </li>
+                <!-- <li>
+                    <a href="{{url_for('timeline')}}" >TIMELINE</a>
+                </li> -->
+                <li>
+                    <a href="" id="dashboard" class=""></a>
+                </li>
+                <li>
+                    <div class="center grow-a-bit">
+                        <button class="remove-for-sign-out show-login login-button-style" id="signInOut"></button>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+        <!--- hamburger button for navbar -->
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    <!-- Sign In modal -->
+    <div class="" id="signin-modal-home">
+        <div class="modal-container">
+            
+            <div class="modal-thing ">
+                <div class="signIn-popup">
+                <!--Sign Up -->                    
+                <div class="signIn-close-btn">&times;</div>   
+                <div class="signUpForm flex justify-center"> 
+
+                    <form>
+
+                        <div class="signin-message">Sign-In</div>
+                        <input type="email" placeholder="Email" id="loginEmail" class="signIn-text-field mb-3">
+                        <input type="password" placeholder="Password" id="loginPassword" class="signIn-text-field mb-3">
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input center" type="checkbox" role="switch" id="keepLoggedInSwitch">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Keep me signed in</label>
+                        </div>
+                        <button type = "button" id="signIn" name="signIn" class="btn signIn-btn mb-3 w-100">Sign In</button>
+                        <a id="show-register" class="clicky-button badge bg-secondary py-1 w-100">I don't have an account</a>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register modal -->
+    <div class="" id="register-modal-home">
+        <div class="modal-container">
+            
+            <div class="modal-thing ">
+                <div class="register-popup">
+                <!--Sign Up -->
+                <div class="register-close-btn">&times;</div>   
+                <div class="signUpForm flex justify-center"> 
+                    <form>
+                        <div class="signin-message">Register</div>
+                        <input type="text" placeholder="First Name" id="firstName" class="form-control signIn-text-field mb-3">
+                        <input type="text" placeholder="Last Name" id="lastName" class="form-control signIn-text-field mb-3">
+                        <input type="email" placeholder="Email" id="userEmail" class="form-control signIn-text-field mb-3">
+                        <input type="password" placeholder="Password" id="userPass" class="form-control signIn-text-field mb-3">
+                        <button type = "button" id="submitData" name="submitData" class="register-btn btn mb-3 w-100">Register</button>
+                        <a id="reveal-login" class="clicky-button badge bg-secondary py-1 w-100">Already have an account?</a>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product container with all the grid elements modal -->
+        <div class="product-container">
+            <div class="product-title">Our Product</div>
+            <div class="aid-title title">Aid</div> 
+            <div class="aid-picture product-pic">
+                <img class="img-fluid disappear device-image" src="{{url_for('static', filename='/img/vibrationmotor.png')}}" alt="ALS device">
+            </div>
+            <div class="aid para">The goal of our ALS Assess device can be broken down into three primary parts, the first being Aid. When the ALS Assess device detects a tremor, it verifies it with a built-in delay to ensure that the high Myoware muscle sensor values are consistent. Then, the Arduino NANO microcontroller responds by providing a voltage to the vibration motors. Vibrational motors are used as a way to provide relief to ALS patients by stimulating their tense muscles. The ALS Assess interfacing technology will also alert ALS patients of the frequency of their tremors. </div>
+            
+            <div class="assess-title title">Assess</div>
+            <div class="assess-picture product-pic">
+                <img class="img-fluid disappear device-image" src="{{url_for('static', filename='/img/graph.png')}}" alt="ALS device">
+            </div>
+            <div class="assess para">The second goal of our device is in our name itself: Assessing. Through the ALS Assess website, users can look at their EMG data themselves. The ALS Assess device stores the user’s data using Google Firebase. Upon accessing the website and creating an account, users can access their EMG data from any day. After selecting a day through the interactive calendar interface, a chart is displayed using Chart.js that displays the EMG tremor readings against the time that the readings were taken. This provides the user with insightful data to help assess their condition and the progression of their ALS.</div>
+
+            <div class="act-title title">Act</div>
+            <div class="act-picture product-pic">
+                <img class="img-fluid disappear device-image" src="{{url_for('static', filename='/img/homepage_hand.png')}}" alt="ALS device">
+            </div>
+            <div class="act para">Our final goal of the ALS Assess is Act. By storing the users data in one cohesive and user friendly environment, it can be easily accessed by a medical professional to help guide them in making a decision for the user. Overall, this can save the user time, money, and effort in their ALS recovery process. </div>
+        
+
+          <!-- How to use information -->
+
+                <div class="how-to-use-title title">How to Use</div> 
+                <div class="how-to para">The ALS Assess is simple to use! Attach the Myoware Muscle Sensor electrodes onto the hand as indicated by the blue circles in the diagram and place the vibration motors in the rubber bands on the glove, where the green circles are on the diagram. The wires lead out of the glove into the blue box that goes into the pink wristband attached to the glove.</div>
+                <div class="how-to-picture product-pic">
+                    <img class="img-fluid disappear device-image" src="{{url_for('static', filename='/img/howto.png')}}" alt="ALS device">
+                </div>
+
+                <div class="faq-title title">FAQs</div> 
+                <div class="faq para">Q: How does the ALS Assess stay secure?<br>A: The ALS Assess is all stored within a comfortable glove that can be easily worn by the user. The vibration motors are put through two rubber bands within the glove to ensure they do not move around. The Myoware Muscle Sensors are sticky enough to stay secure to the skin. All the ALS electronics are stored on a pink wristband outside of the glove.
+                    <br><br>Q: What should I do if my ALS tremors are getting more frequent?<br>A: Our ALS device is not made by professionals! We are simply helping to provide a way to keep track of your tremor data. If they worsen, contact a medical professional!</div>
+                    <br> hi
+        </div>
+        
+
+
+    
+</body>
+
+<!--Footer (Requires BootStrap Icon CSS)-->
+<footer class="p-4 footer position-relative text-light text-center " id="footer">
+  
+    
+    <p class="lead">Copyright &copy; SE 2023 The ALS Assess</p>
+    <p class="small">Website made by Priya Gokhale </p>
+    <a href="#" class="position-absolute bottom-0 end-0 p-5">
+        <i class="bi bi-arrow-up-circle h2 icon-white"></i>
+    </a>
+</footer>
+</html>

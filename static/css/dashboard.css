@@ -1,0 +1,142 @@
+/* 
+  Project Name: Wearable Sensor ALS Assess
+  Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
+  Date Due: May 31st
+  File Name: dashboard.css
+  Task Description: individual css file for dashboard page, controlling all buttons on the page for the user to easily access their data
+*/
+
+/* makes the body one uniform color, similar to the other pages */
+body {
+  background: linear-gradient(to left, #120351, #023645);
+}
+
+
+/* formatting the custom welcome and heading on the dashboard */
+.dashboard-heading{
+    color: #dde6e5;
+    font-family: 'Martian Mono';
+  }
+
+.welcome {
+    position: relative;
+    margin-top: 70px;
+    color: white;
+    font-family: 'Martian Mono';
+}
+
+h1 {
+    color:#dde6e5;
+    text-align: center;
+    position: relative;
+    font-family: 'Martian Mono';
+
+}
+
+.heading-div {
+    height: 280px;
+    padding-top: 100px;
+    padding-bottom: 220px;
+}
+
+/* allows for information to be above animated background */
+.above-all {
+  position: relative;
+  z-index: 950;
+  background-color: rgb(57, 57, 112, 0.7);
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  outline: none;
+  display: flex;
+  color:white;
+}
+
+#date {
+  background-color: transparent;
+  color:white;
+  border:none;
+  outline: none;
+  display:flex; 
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.center-stuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 40px;
+  font-family: "Martian Mono";
+  width: 100%;
+}
+
+/* incorporating chart.js */
+canvas{
+
+  width:100% !important;
+  height:100% !important;
+  margin: 30px 0;
+  
+}
+
+.set-background {
+  background-color: rgb(158, 186, 250);
+  z-index: 100000;
+  position: relative;
+  color: black;
+  border-radius: 20px;
+}
+
+
+/* adding stylistic elements to the buttons depending on if they are pressed */
+.start-recording {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: "Martian Mono";
+  width: 100%;
+  position: relative;
+  z-index: 950;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  outline: none;
+  color:white;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  
+}
+
+.recording-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
+}
+
+.data-container {
+  padding-top: auto;
+}
+
+.stop-recording {
+  display: none;
+}
+
+/* depending on if stop or start recording is active (in the javascript) that button will be displayed */
+.active {
+  display: flex !important;
+}
+
+#start-recording {
+  background-color: rgba(61, 245, 79, 0.596);
+}
+
+#stop-recording {
+  background-color: rgba(208, 52, 17, 0.596);
+}
+

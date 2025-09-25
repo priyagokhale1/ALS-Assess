@@ -1,0 +1,269 @@
+/* 
+  Project Name: Wearable Sensor ALS Assess
+  Team Members: Priya Gokhale, Emme Cai, Haley Deng, Bernice Zhao
+  Date Due: May 31st
+  File Name: index.css
+  Task Description: individual css file for index page, controlling the moving background and title and other elements on this page to access other pages
+*/
+
+/* makes the body one uniform color, similar to the other pages */
+body {
+    background: linear-gradient(to left, #120351, #023645);
+
+}
+
+/* overall grid container for the title and picture */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.content-large {
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.picture-content {
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    grid-column-start:3;
+}
+
+.big-title {
+    -webkit-box-reflect: below -10px linear-gradient(transparent, #211e1e2e);
+    font-size: 65px;
+    place-items: center;
+    margin-top: 160px;
+
+}
+
+/* styling the title animation */
+.bounce span {
+    display: inline-flex;
+    font-family: "Martian Mono";
+    font-weight: bold;
+    animation: bounce 1s;
+}
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+}
+.ten span:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+.ten span:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.ten span:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+.ten span:nth-of-type(4) {
+    animation-delay: 0.4s;
+}
+.ten span:nth-of-type(5) {
+    animation-delay: 0.5s;
+}
+.ten span:nth-of-type(6) {
+    animation-delay: 0.6s;
+}
+.ten span:nth-of-type(7) {
+    animation-delay: 0.7s;
+}
+.ten span:nth-of-type(8) {
+    animation-delay: 0.8s;
+}
+.ten span:nth-of-type(9) {
+    animation-delay: 0.9s;
+}
+.ten span:nth-of-type(10) {
+    animation-delay: 1s;
+}
+.ten span:nth-of-type(11) {
+    animation-delay: 1.1s;
+}
+.ten span:nth-of-type(12) {
+    animation-delay: 1.2s;
+}
+.ten span:nth-of-type(13) {
+    animation-delay: 1.4s;
+}
+.ten span:nth-of-type(14) {
+    animation-delay: 1.5s;
+}
+
+
+/* beginning the section when scrolling. accessing the dashboard through a button (once the user signs in. otherwise, prompts user to sign in) */
+.dashboard-heading{
+    color: #dde6e5;
+    font-family: 'Martian Mono';
+    position: relative;
+    text-align: center;
+    font-size: 80px;
+  }
+
+  .dashboard-button {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: "Martian Mono";
+    width: 100%;
+    position: relative;
+    z-index: 950;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    outline: none;
+    color:white;
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    background-color: rgba(61, 245, 236, 0.596);
+    
+  }
+  
+  .dashboard-button-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+
+  .second-section {
+    height: 40vh;
+    align-content: center;
+    position: relative;
+    padding-top: 60px;
+  }
+
+  /* beginning grid style for the about us and our product mini blurbs that let the user navigate to the pages */
+  .two-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 60vh;
+    padding: 20px 20px;
+    column-gap: 40px;
+
+  }
+
+  .about-us-title {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Martian Mono';
+  }
+
+  .our-product-title {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Martian Mono';
+  }
+
+  .about-us-para {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Martian Mono';
+    text-align: center;
+
+  }
+
+  .our-product-para {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Martian Mono';
+    text-align: center;
+  }
+
+  .more-about-us {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: rgb(192, 11, 11) !important;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Martian Mono';
+    padding-top: 20px;
+    text-align: center;
+
+  }
+
+  .more-our-product {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    display: flex;
+    justify-content: center;
+    color: white !important;
+    font-size: 20px;
+    font-family: 'Martian Mono';
+    padding-top: 20px;
+    text-align: center;
+
+
+  }
+
+  /* setting links to be white text */
+  a {
+    color: white !important;
+}
+
+
+/* adding a BIT of responsiveness to the website. */
+
+@media (max-width: 1200px) {
+    .main-body {
+      display: block;
+    }
+    .picture-content {
+        display: none;
+    }
+
+    
+  }
